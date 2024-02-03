@@ -1,2 +1,330 @@
-<h1>Landing Page</h1>
-<a href="{% url 'OrphanList' %}">OrphanList</a>
+<!-- <h1>Landing Page</h1>
+<a href="{% url 'OrphanList' %}">OrphanList</a> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Me</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: url('/static/assets/images/meetings-bg.jpg');
+            z-index:-1;
+        }
+
+        .line {
+            background-color: rgb(88, 84, 84);
+            color: white;
+            padding: 0.6rem;
+            text-align: center;
+            position:fixed;
+            top:0;
+            z-index:99999;
+            width:100%;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 4%;
+            width: 100%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            z-index: 999;
+            color: white;
+            font-weight: 600;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+            /* Align items to the right */
+            margin: 0;
+            margin-right: 2rem;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin: 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .logo {
+            color: black;
+            font-weight: bolder;
+            text-decoration: none;
+            font-size: 2.5rem;
+            margin-left: 4rem;
+       
+        }
+
+        .logome {
+            color: rgb(10, 226, 255);
+            font-weight: bolder;
+            text-decoration: none;
+            font-size: 2.5rem;
+        }
+
+        .bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .adoptbtn {
+            text-decoration: none;
+            background-color: rgb(206, 41, 41);
+            color: white;
+            padding: 1rem;
+            width: 50;
+            height: 50;
+            border: 0.1rem solid rgb(175, 25, 25);
+            border-radius: 10%;
+            margin-left: 7rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .adoptbtn:hover {
+            cursor: pointer;
+        }
+
+        .caption {
+            color: white;
+            position: absolute;
+            left: 10%;
+            top: 35%;
+        }
+
+        .caption h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        .caption h6 {
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .containers {
+            position: absolute;
+            display: flex;
+            justify-content: space-evenly;
+            top: 85%;
+            z-index: 999;
+            color: white;
+        }
+
+        .container {
+            background: url('/static/assets/images/service-item-bg.jpg');
+            height: 35vh;
+            width: 25vw;
+            margin-left: 2.5rem;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 5%;
+        }
+
+        .container img {
+            margin-bottom: 1.2rem;
+        }
+
+        .section h1 {
+            text-align: center;
+            color: white;
+            position: relative;
+            top: 40%;
+            font-size: 2rem;
+        }
+
+        .section hr {
+            position: relative;
+            top: 41%;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-evenly;
+            z-index: 999;
+            position: relative;
+            top: 50%;
+            color: black;
+            padding: 1rem;
+        }
+
+        .card {
+            background-color: white;
+            height: 60vh;
+            width: 30vw;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            margin-left: 2rem;
+            border-radius: 5%;
+        }
+
+        .card div {
+            margin-top: 0;
+            padding: 1rem;
+        }
+
+        .subsection {
+            position: absolute;
+            top: 150%;
+            left: 17%;
+        }
+
+        .card img {
+            width: 100%;
+            height: 50%;
+        }
+
+        .card div h1 {
+            position: relative;
+            top: 10%;
+            margin-top: 0;
+            color: black;
+        }
+        .footer {
+           position:fixed;
+           width:100%;
+           bottom:0;
+           background-color: rgb(88, 84, 84);
+           text-align:center;
+           color:white;
+           z-index:999;
+           letter-spacing: 0.2rem;
+        }
+
+      
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div>
+            <div class="line">This is a Non-Profit Social Welfare website designed to facilitate the adoption process
+                designed by Fantastic four team for Hackstreet 2.0 </div>
+
+            <video autoplay muted loop class="bg-video">
+                <source src="/static/assets/mainbg.mp4" type="video/mp4" />
+            </video>
+
+            <nav class="navbar">
+
+                <a href="index.html" class="logo">
+                    PARENT<span class="logome">ME</span>
+                </a>
+
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Donate</li>
+                    <li>Privacy & Terms</li>
+                    <li>Roadmap</li>
+                    <li>Contact Us</li>
+                </ul>
+            </nav>
+
+            <div class="caption">
+                <h2>A Home for Every Heart<3 </h2>
+                        <h6>Explore Adoption Options Now </h6>
+                        <a href="{% url 'OrphanList' %}" class="adoptbtn">Adopt Me</a>
+            </div>
+
+
+            <div class="containers">
+                <div class="container">
+                    <img src="/static/assets/images/service-icon-01.png" />
+                    <h1>Virtual Conference</h1>
+                    <h3>Get to meet our experienced advisors & have a fun chat children.</h3>
+                </div>
+                <div class="container">
+                    <img src="/static/assets/images/service-icon-02.png" />
+                    <h1>Start Your Adoption Journey</h1>
+                    <h3>Complete Roadmap to get your adoption journey started</h3>
+                </div>
+                <div class="container">
+                    <img src="/static/assets/images/service-icon-03.png" />
+                    <h1>Crowd Funding</h1>
+                    <h3>Donate for a cause through any payment gateway from anywhere around the world</h3>
+                </div>
+            </div>
+    </header>
+    <section class="section">
+        <div class="subsection">
+            <h1>OUR MISSION</h1>
+            <hr />
+
+            <div class="cards">
+                <div class="card">
+                    <img src="/static/assets/images/card-1.jpg" />
+                    <div>
+                        <h1>How We Help?</h1>
+                        <h4>Many babies are left at our centre, and our ChildLine team and volunteers also bring us
+                            babies found abandoned in public places, sadly sometimes they are found too late.</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/static/assets/images/card-2.jpg" />
+                    <div>
+                        <h1>Who We Help?</h1>
+                        <h4>Since we opened our doors in 2004 we have successfully rescued and saved the lives of over
+                            1,500 babies, adopting them under a government-approved and accredited process. We have also
+                            played a key role in consulting on the government's proposed new adoption guidelines.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <img src="/static/assets/images/card-3.jpg" />
+                    <div>
+                        <h1>Why Join Us?</h1>
+                        <h4>Many babies are left at our centre, and our ChildLine team and volunteers also bring us
+                            babies found abandoned in public places, sadly sometimes they are found too late.</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/static/assets/images/card-4.jpg" />
+                    <div>
+                        <h1>How Can You Help?</h1>
+                        <h4>Help us to ensure no baby is left abandoned and unloved. We are currently building a new
+                            50-bed adoption centre with improved neo- and post-natal facilities and space for unmarried
+                            mothers to give birth in safety.</h4>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer class="footer">
+      
+        <p>A Home for Every Heart: Explore Adoption Options Now</p>
+
+    </footer>
+
+
+</body>
+
+</html>
