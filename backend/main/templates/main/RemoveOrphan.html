@@ -1,0 +1,6 @@
+<a href="{% url 'OrphanList' %}">Go Back</a>
+<form method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to remove {{orphan.name}}?</p>
+    <input type="submit" value="Yes, I'm sure">
+</form>
