@@ -4,6 +4,7 @@ from .import views
 urlpatterns = [
     path('login-orphanage/',views.CustomLoginView.as_view(),name='login-orphanage'),
     path('logout-orphanage/',views.logoutOrphanage,name='logout-orphanage'),
+    path('register-orphanage/',views.RegisterPage.as_view(),name='register-orphanage'),
     path('',views.landingPage, name='landingPage'),
     path('Orphans/',views.OrphanList.as_view(),name='OrphanList'),
     path('OrphanDetails/<int:pk>/',views.OrphanDetails.as_view(),name='OrphanDetails'),
