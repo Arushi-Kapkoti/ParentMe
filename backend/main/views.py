@@ -1,3 +1,4 @@
+from typing import Any
 from django.forms.models import BaseModelForm
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
@@ -28,27 +29,35 @@ def logoutOrphanage(request):
         logouts(request)
         return redirect('login-orphanage')
 
-class OrphanList(ListView):
+class OrphanList(LoginRequiredMixin, ListView):
     model = Orphan
     context_object_name = 'Orphans'
 
-class OrphanDetails(DetailView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Orphans'] = context['Orphans'].filter(orphanage=self.request.user)
+        return context
+
+class OrphanDetails(LoginRequiredMixin, DetailView):
     model = Orphan
     context_object_name = 'orphan'
 
-class AddOrphan(CreateView):
+class AddOrphan(LoginRequiredMixin, CreateView):
+    model = Orphan
+    fields = ['name','child_image','description','age']
+    template_name = 'main/AddOrphan.html'
+    success_url = reverse_lazy('OrphanList')
+    def form_valid(self, form):
+        form.instance.orphanage = self.request.user
+        return super(AddOrphan, self).form_valid(form)
+
+class UpdateOrphanDetails(LoginRequiredMixin, UpdateView):
     model = Orphan
     fields = '__all__'
     template_name = 'main/AddOrphan.html'
     success_url = reverse_lazy('OrphanList')
 
-class UpdateOrphanDetails(UpdateView):
-    model = Orphan
-    fields = '__all__'
-    template_name = 'main/AddOrphan.html'
-    success_url = reverse_lazy('OrphanList')
-
-class RemoveOrphan(DeleteView):
+class RemoveOrphan(LoginRequiredMixin, DeleteView):
     model = Orphan
     context_object_name = 'orphan'
     template_name = 'main/RemoveOrphan.html'
