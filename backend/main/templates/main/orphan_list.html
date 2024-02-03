@@ -1,0 +1,19 @@
+<h1>Orphans With Us</h1>
+<a href="{% url 'landingPage' %}">Home Page</a><br>
+<a href="{% url 'AddOrphan' %}">Register a child with us</a>
+<table>
+    <tr>
+        <th>
+            Orphans
+        </th>
+        <th></th>
+    </tr>
+    {% for orphan in Orphans %}
+    <tr>
+        <td>{{orphan.name}}</td>
+        <td><a href="{% url 'OrphanDetails' orphan.id %}">Details</a></td>
+    </tr>
+    {% empty %}
+    <h3>No orphans registered with us</h3>
+    {% endfor %}
+</table>
