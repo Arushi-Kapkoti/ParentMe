@@ -234,8 +234,8 @@
                 </a>
 
                 <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
+                    <li><a href="{% url 'OrphanList' %}" style="text-decoration: none; color:white;">Orphanage</a></li>
+                    <li>AboutUs</li>
                     <li>Donate</li>
                     <li>Privacy & Terms</li>
                     <li>Roadmap</li>
@@ -246,8 +246,7 @@
             <div class="caption">
                 <h2>A Home for Every Heart<3 </h2>
                         <h6>Explore Adoption Options Now </h6>
-                        <a href="{% url 'OrphanList' %}" class="adoptbtn">Adopt Me</a>
-                        <a href="{% url 'OrphanList' %}" class="adoptbtn">Orphanage</a>
+                        <a href="{% url 'AdoptMe' %}" class="adoptbtn">Adopt Me</a>
             </div>
 
 
@@ -269,14 +268,14 @@
                 </div>
             </div>
     </header>
-    <section class="section">
+    <section class="section" id="AboutUs">
         <div class="subsection">
             <h1>OUR MISSION</h1>
             <hr />
 
             <div class="cards">
                 <div class="card">
-                    <img src="/static/assets/images/card-1.jpg" />
+                    <img src="/static/assets/images/card-1.jpg" style="border-radius: 5% 5% 0 0;" />
                     <div>
                         <h1>How We Help?</h1>
                         <h4>Many babies are left at our centre, and our ChildLine team and volunteers also bring us
@@ -285,7 +284,7 @@
                 </div>
 
                 <div class="card">
-                    <img src="/static/assets/images/card-2.jpg" />
+                    <img src="/static/assets/images/card-2.jpg" style="border-radius: 5% 5% 0 0;" />
                     <div>
                         <h1>Who We Help?</h1>
                         <h4>Since we opened our doors in 2004 we have successfully rescued and saved the lives of over
@@ -297,7 +296,7 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <img src="/static/assets/images/card-3.jpg" />
+                    <img src="/static/assets/images/card-3.jpg"  style="border-radius: 5% 5% 0 0;"/>
                     <div>
                         <h1>Why Join Us?</h1>
                         <h4>Many babies are left at our centre, and our ChildLine team and volunteers also bring us
@@ -306,7 +305,7 @@
                 </div>
 
                 <div class="card">
-                    <img src="/static/assets/images/card-4.jpg" />
+                    <img src="/static/assets/images/card-4.jpg"  style="border-radius: 5% 5% 0 0;"/>
                     <div>
                         <h1>How Can You Help?</h1>
                         <h4>Help us to ensure no baby is left abandoned and unloved. We are currently building a new

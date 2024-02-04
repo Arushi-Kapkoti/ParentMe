@@ -1,7 +1,10 @@
 <a href="{% url 'OrphanList' %}">Go Back</a>
 <h1>{{orphan.name}}</h1>
-<!-- <img src="{{orphan.child_image.url}}"> -->
-<img src="{{orphan.child_image.url}}" width="200px" height="200px">
+{% if orphan.child_image %}
+    <img src="{{orphan.child_image.url}}" width="200px" height="200px">
+{% else %}
+    <img src="/static/assets/images/noUser.png" width="200px" height="200px">
+{% endif %}
 <br>
 <b>Age: </b>{{orphan.age}}<br>
 <b>About: </b>{{orphan.description}}<br>

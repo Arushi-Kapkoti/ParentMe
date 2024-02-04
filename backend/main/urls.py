@@ -11,4 +11,5 @@ urlpatterns = [
     path('AddOrphan/',views.AddOrphan.as_view(),name='AddOrphan'),
     path('Update-orphan-details/<int:pk>/',views.UpdateOrphanDetails.as_view(),name='UpdateOrphanDetails'),
     path('Remove-orphan/<int:pk>/',views.RemoveOrphan.as_view(),name='RemoveOrphan'),
+    path('Adopt-me/',views.AdoptMe.as_view(),name='AdoptMe'),
 ]

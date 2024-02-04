@@ -2,7 +2,13 @@
 
 <form method="POST">
     {% csrf_token %}
-    {{form.as_p}}
+    <!-- {{form.as_p}} -->
+    <label>{{form.username.label}}</label><br>
+    {{form.username}}<br>
+    <label>{{form.password1.label}}</label><br>
+    {{form.password1}}<br>
+    <label>{{form.password2.label}}</label><br>
+    {{form.password2}}<br>
     <input type="submit" value="Register">
 </form>
 
