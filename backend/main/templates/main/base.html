@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParentMe</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family: Arial, sans-serif;
+        }
+        .line {
+            background-color: rgb(88, 84, 84);
+            color: white;
+            padding: 0.6rem;
+            text-align: center;
+            position:fixed;
+            top:0;
+            z-index:99999;
+            width:100%;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 4%;
+            width: 97.9%;
+            background: grey;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            z-index: 999;
+            color: white;
+            font-weight: 600;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+            /* Align items to the right */
+            margin: 0;
+            margin-right: 2rem;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin: 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .logo {
+            color: black;
+            font-weight: bolder;
+            text-decoration: none;
+            font-size: 2.5rem;
+            margin-left: 4rem;
+       
+        }
+
+        .logome {
+            color: rgb(10, 226, 255);
+            font-weight: bolder;
+            text-decoration: none;
+            font-size: 2.5rem;
+        }
+        .outergrid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-bottom: 3rem;
+        }
+        .gridcell{
+            /* padding: 2em; */
+            max-width: 550px;
+            border-radius: 1em;
+            margin: auto;
+            background-color: #fff;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+            width: 300px;
+            height: 450px;
+            margin-top: 70px;
+            display: grid;
+            grid-template-rows: 6fr 0.5fr 3.5fr;
+            place-self: center;
+            place-items: center;
+        }
+
+        .gridcell:hover{
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        .footer {
+           position:fixed;
+           width:100%;
+           bottom:0;
+           background-color: rgb(88, 84, 84);
+           text-align:center;
+           color:white;
+           z-index:999;
+           letter-spacing: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="line">This is a Non-Profit Social Welfare website designed to facilitate the adoption process
+        designed by Fantastic four team for Hackstreet 2.0 </div>
+    <nav class="navbar">
+
+        <a href="{% url 'landingPage' %}" class="logo">
+            PARENT<span class="logome">ME</span>
+        </a>
+
+        <ul>
+            <li><a href="{% url 'OrphanList' %}" style="text-decoration: none; color:white;">Orphanage</a></li>
+            <li>AboutUs</li>
+            <li>Donate</li>
+            <li>Privacy & Terms</li>
+            <li>Roadmap</li>
+            <li>Contact Us</li>
+        </ul>
+    </nav>
+    <div class="block" style="margin-top: 7rem; padding: 2rem;">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <footer class="footer">
+      
+        <p>A Home for Every Heart: Explore Adoption Options Now</p>
+
+    </footer>
+</body>
+</html>

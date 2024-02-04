@@ -1,20 +1,40 @@
-<a href="{% url 'landingPage' %}">Go Back</a>
-<h1>Adopt Me</h1>
+{% extends 'main/base.html' %}
+{% block content %}
+<!-- <a href="{% url 'landingPage' %}">Go Back</a> -->
 <form method="GET">
     <input type="text" name="search-area" value="{{search_input}}">
-    <input type="submit" value="Search">
+    <input type="submit" value="Search By Age">
 </form>
-{% for orphan in Orphans %}
-    <div>
-        <h3>{{orphan.name}}</h3>
+<div class="outergrid">
+    {% for orphan in Orphans %}
+    <div class="gridcell">
+        {% if orphan.child_image %}
+            <img src="{{orphan.child_image.url}}" width="200px" height="200px" style="border-radius: 5%;">
+        {% else %}
+            <img src="/static/assets/images/noUser.png" width="200px" height="200px" style="border-radius: 5%;">
+        {% endif %}
+        <div>
+            <h2>{{orphan.name}}</h2>
+        </div>
+        <div class="details">
+            <b>Age: </b>{{orphan.age}}<br><br>
+            <b>Orphanage: </b>{{orphan.orphanage}}<br><br>
+            <b>About: </b>{{orphan.description}}
+        </div>
+    </div>
+    <!-- <div class="gridcell">
         {% if orphan.child_image %}
             <img src="{{orphan.child_image.url}}" width="200px" height="200px">
         {% else %}
             <img src="/static/assets/images/noUser.png" width="200px" height="200px">
         {% endif %}
-        <br>
+        <div class="span-name"><h3>{{orphan.name}}</h3></div>
         <b>Age: </b>{{orphan.age}}<br>
         <b>About: </b>{{orphan.description}}<br>
         <b>Orphanage: </b>{{orphan.orphanage}}<br>
-    </div>
+    </div> -->
 {% endfor %}
+</div>
+
+{% endblock content %}
+

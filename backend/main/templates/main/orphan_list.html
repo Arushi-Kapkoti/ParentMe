@@ -1,3 +1,5 @@
+{% extends 'main/base.html' %}
+{% block content %}
 {% if request.user.is_authenticated %}
     <p>{{request.user}}</p>
     <a href="{% url 'logout-orphanage' %}">Logout</a>
@@ -29,3 +31,24 @@
     <h3>No orphans registered with us</h3>
     {% endfor %}
 </table>
+
+<div class="outergrid">
+    {% for orphan in Orphans %}
+    <div class="gridcell">
+        {% if orphan.child_image %}
+            <img src="{{orphan.child_image.url}}" width="200px" height="200px" style="border-radius: 5%;">
+        {% else %}
+            <img src="/static/assets/images/noUser.png" width="200px" height="200px" style="border-radius: 5%;">
+        {% endif %}
+        <div>
+            <h2>{{orphan.name}}</h2>
+        </div>
+        <div class="details">
+            <b>Age: </b>{{orphan.age}}<br><br>
+            <b>About: </b>{{orphan.description}}<br><br>
+            <a href="{% url 'RemoveOrphan' orphan.id %}">Remove Orphan from database</a>
+
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content %}
