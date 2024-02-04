@@ -1,16 +1,19 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<h1>Login</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    <!-- {{form.as_p}} -->
-    <label>{{form.username.label}}</label><br>
-    {{form.username}}<br>
-    <label>{{form.password.label}}</label><br>
-    {{form.password}}<br>
-    <input type="submit" value="login" class="btn-btn">
-</form>
+<div class="outerdiv" style="background-color: white; margin:0 10rem 10rem 10rem; padding:2rem; border-radius:1%;">
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <label>{{form.username.label}}</label><br>
+        {{form.username}}<br>
+        <label>{{form.password.label}}</label><br>
+        {{form.password}}<br>
+        <input type="submit" value="login" class="btn-btn">
+    </form>
+    
+    <p>Don't have an account? <a href="{% url 'register-orphanage' %}" style="color: rgb(66, 66, 66);">Register Here</a></p>
+</div>
 
-<p>Don't have an account? <a href="{% url 'register-orphanage' %}" style="color: rgb(66, 66, 66);">Register Here</a></p>
 {% endblock content %}

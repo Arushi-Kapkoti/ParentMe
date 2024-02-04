@@ -1,18 +1,20 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<h1>Register Your Orphanage with Us!</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    <!-- {{form.as_p}} -->
-    <label>{{form.username.label}}</label><br>
-    {{form.username}}<br>
-    <label>{{form.password1.label}}</label><br>
-    {{form.password1}}<br>
-    <label>{{form.password2.label}}</label><br>
-    {{form.password2}}<br>
-    <input type="submit" value="Register" class="btn-btn">
-</form>
-
-<p>Already have an account? <a href="{% url 'login-orphanage' %}" style="color: rgb(66, 66, 66);">Login Here</a></p>
-{% endblock content %}
+<div class="outerdiv" style="background-color: white; margin:0 10rem 10rem 10rem; padding:2rem; border-radius:1%;">
+    <h1>Register Your Orphanage with Us!</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <label id="lbl">{{form.username.label}}</label><br>
+        {{form.username}}<br>
+        <label id="lbl">{{form.password1.label}}</label><br>
+        {{form.password1}}<br>
+        <label id="lbl">{{form.password2.label}}</label><br>
+        {{form.password2}}<br>
+        <input type="submit" value="Register" class="btn-btn">
+    </form>
+    
+    <p>Already have an account? <a href="{% url 'login-orphanage' %}" style="color: rgb(66, 66, 66);">Login Here</a></p>
+    {% endblock content %}
+</div>

@@ -1,7 +1,11 @@
-
-<a href="{% url 'OrphanList' %}">Go Back</a>
-<form method="POST" enctype="multipart/form-data" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Done">
-</form>
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="outerdiv" style="background-color: white; margin:0 10rem 10rem 10rem; padding:2rem; border-radius:1%;">
+    <form method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Done" class="btn">
+        <a href="{% url 'OrphanList' %}" class="btn">Go Back</a>
+    </form>
+</div>
+{% endblock content %}

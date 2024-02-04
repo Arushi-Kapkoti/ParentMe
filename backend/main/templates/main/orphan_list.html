@@ -3,7 +3,7 @@
 
 <div class="top">
     {% if request.user.is_authenticated %}
-    <h1>Welcome {{request.user}}</h1>
+    <h1 style="color:white;">Welcome {{request.user}}</h1>
     <a href="{% url 'logout-orphanage' %}" class="btn" style="margin: 1rem 0 1rem 0;">Logout</a>
     {% else %}
         <a href="{% url 'login-orphanage' %}">Login</a>
@@ -28,7 +28,7 @@
             <b>Joined us: </b>{{orphan.joined}}<br><br>
             <!-- <a href="{% url 'OrphanDetails' orphan.id %}">Details</a><br><br> -->
             <b>About: </b>{{orphan.description}}<br><br>
-            <a href="{% url 'RemoveOrphan' orphan.id %}" style="color: rgb(66, 66, 66);">Remove Orphan from database</a>
+            <a href="{% url 'RemoveOrphan' orphan.id %}" style="color: rgb(49,141,153);">Remove Orphan from database</a>
 
         </div>
     </div>
