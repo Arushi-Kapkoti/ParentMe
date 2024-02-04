@@ -1,36 +1,15 @@
 {% extends 'main/base.html' %}
 {% block content %}
 {% if request.user.is_authenticated %}
-    <p>{{request.user}}</p>
+    <h1>Welcome {{request.user}}</h1>
     <a href="{% url 'logout-orphanage' %}">Logout</a>
 {% else %}
     <a href="{% url 'login-orphanage' %}">Login</a>
 {% endif %}
 <br>
-<a href="{% url 'landingPage' %}">Home Page</a><br>
-<hr>
-<h1>Orphans With Us</h1>
+
 <a href="{% url 'AddOrphan' %}">Register a child with us</a>
-<table>
-    <tr>
-        <th>
-            Orphans
-        </th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    {% for orphan in Orphans %}
-    <tr>
-        <td>{{orphan.name}}</td>
-        <td><a href="{% url 'OrphanDetails' orphan.id %}">Details</a></td>
-        <td><a href="{% url 'UpdateOrphanDetails' orphan.id %}">Update Details</a></td>
-        <td><a href="{% url 'RemoveOrphan' orphan.id %}">Delete</a></td>
-    </tr>
-    {% empty %}
-    <h3>No orphans registered with us</h3>
-    {% endfor %}
-</table>
+<hr>
 
 <div class="outergrid">
     {% for orphan in Orphans %}
@@ -41,12 +20,14 @@
             <img src="/static/assets/images/noUser.png" width="200px" height="200px" style="border-radius: 5%;">
         {% endif %}
         <div>
-            <h2>{{orphan.name}}</h2>
+            <h2><a href="{% url 'UpdateOrphanDetails' orphan.id %}" style="text-decoration: none; color: black;">{{orphan.name}}</a></h2>
         </div>
         <div class="details">
             <b>Age: </b>{{orphan.age}}<br><br>
+            <b>Joined us: </b>{{orphan.joined}}<br><br>
+            <!-- <a href="{% url 'OrphanDetails' orphan.id %}">Details</a><br><br> -->
             <b>About: </b>{{orphan.description}}<br><br>
-            <a href="{% url 'RemoveOrphan' orphan.id %}">Remove Orphan from database</a>
+            <a href="{% url 'RemoveOrphan' orphan.id %}" style="color: rgb(66, 66, 66);">Remove Orphan from database</a>
 
         </div>
     </div>
