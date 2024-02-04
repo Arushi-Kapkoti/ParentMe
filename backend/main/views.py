@@ -101,3 +101,6 @@ def Donate(request):
 
 def SuccessPage(request): 
     return render(request,'main/successPage.html')
+
+def roadmap(request):
+    return render(request,'main/roadmap.html')

@@ -8,7 +8,7 @@
         body{
             margin: 0px;
             font-family: Arial, sans-serif;
-            background-color: rgb(91, 3, 3);
+            background-color: rgb(228, 228, 228);
         }
         .line {
             background-color: rgb(88, 84, 84);
@@ -161,6 +161,143 @@
             display: flex;
             justify-content: space-between;
         }
+
+        /* * {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        } */
+
+        #sidebar {
+            position: fixed;
+            min-width: 290px;
+            top: 60px;
+            left: 0px;
+            width: 150px;
+            height: 100%;
+            border-right: solid;
+            border-color: rgba(0, 22, 22, 0.4);
+            z-index: 99;
+            /* Ensure the sidebar stays behind the navbar */
+        }
+
+        p{
+            font-size:1.5rem;
+            margin-top:1rem;
+            margin-bottom:0;
+        }
+
+        h2 {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+
+        #documentation h2 {
+            text-align: left;
+            margin: 0px;
+        }
+
+        #sidebar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #sidebar li {
+            color: #4d4e53;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        #Introduction ul li{
+            font-size:1.5rem;
+        }
+
+        #sidebar .nav-item {
+            display: block;
+            padding: 10px 30px;
+            color: darkred;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.6rem;
+        }
+
+        #documentation {
+            margin-left: 310px;
+            background-size: 2000px 2000px;
+            margin-top: 50px;
+
+        }
+
+        section article {
+            color: black;
+            margin: 15px;
+            font-size: 1.2em;
+        }
+
+        section li {
+            margin: 25px 0px 0px 20px;
+        }
+       section{
+        padding-top:70px;
+       }
+        pre {
+            display: block;
+            text-align: left;
+            ;
+            white-space: pre-line;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            background-color: #f7f7f7;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .hscroll {
+            overflow-x: auto;
+        }
+
+        table {
+            caption-side: bottom;
+            border-collapse: collapse;
+        }
+
+        @media only screen and (max-width: 815px) {
+
+            /* For mobile phones: */
+            #sidebar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+
+            #sidebar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+
+            #documentation {
+                margin-left: 0px;
+            }
+        }
+    </style>
     </style>
 </head>
 <body>
