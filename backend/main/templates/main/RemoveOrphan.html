@@ -3,7 +3,7 @@
 <br><br>
 <form method="POST">
     {% csrf_token %}
-    <p>Are you sure you want to remove {{orphan.name}}?</p>
+    <h2 style="color: rgb(223, 220, 220);">Are you sure you want to remove {{orphan.name}}?</h2>
     <input type="submit" value="Yes, I'm sure" class="btn-btn">
     <a href="{% url 'OrphanList' %}" class="btn">Go Back</a>
 </form>

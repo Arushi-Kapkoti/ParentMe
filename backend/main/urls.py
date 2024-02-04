@@ -14,4 +14,5 @@ urlpatterns = [
     path('Adopt-me/',views.AdoptMe.as_view(),name='AdoptMe'),
     path('Donate/',views.Donate,name='Donate'),
     path('SuccessPage/',views.SuccessPage,name='SuccessPage'),
+    path('roadmap/',views.roadmap,name='roadmap'),
 ]
