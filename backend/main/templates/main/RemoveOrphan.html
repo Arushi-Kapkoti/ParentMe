@@ -1,6 +1,11 @@
-<a href="{% url 'OrphanList' %}">Go Back</a>
+{% extends 'main/base.html' %}
+{% block content %}
+<br><br>
 <form method="POST">
     {% csrf_token %}
     <p>Are you sure you want to remove {{orphan.name}}?</p>
-    <input type="submit" value="Yes, I'm sure">
+    <input type="submit" value="Yes, I'm sure" class="btn-btn">
+    <a href="{% url 'OrphanList' %}" class="btn">Go Back</a>
 </form>
+
+{% endblock content %}

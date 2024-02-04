@@ -12,4 +12,6 @@ urlpatterns = [
     path('Update-orphan-details/<int:pk>/',views.UpdateOrphanDetails.as_view(),name='UpdateOrphanDetails'),
     path('Remove-orphan/<int:pk>/',views.RemoveOrphan.as_view(),name='RemoveOrphan'),
     path('Adopt-me/',views.AdoptMe.as_view(),name='AdoptMe'),
+    path('Donate/',views.Donate,name='Donate'),
+    path('SuccessPage/',views.SuccessPage,name='SuccessPage'),
 ]

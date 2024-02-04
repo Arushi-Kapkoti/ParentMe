@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<h1>Register(Orphanage)</h1>
+<h1>Register Your Orphanage with Us!</h1>
 
 <form method="POST">
     {% csrf_token %}
@@ -11,9 +11,8 @@
     {{form.password1}}<br>
     <label>{{form.password2.label}}</label><br>
     {{form.password2}}<br>
-    <input type="submit" value="Register">
+    <input type="submit" value="Register" class="btn-btn">
 </form>
 
-<p>Already have an account? <a href="{% url 'login-orphanage' %}">Login Here</a></p>
-<p><a href="{% url 'landingPage' %}">Home Page</a></p>
+<p>Already have an account? <a href="{% url 'login-orphanage' %}" style="color: rgb(66, 66, 66);">Login Here</a></p>
 {% endblock content %}

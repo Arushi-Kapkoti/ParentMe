@@ -1,13 +1,16 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<h1>Login(Orphanage)</h1>
+<h1>Login</h1>
 
 <form method="POST">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="login">
+    <!-- {{form.as_p}} -->
+    <label>{{form.username.label}}</label><br>
+    {{form.username}}<br>
+    <label>{{form.password.label}}</label><br>
+    {{form.password}}<br>
+    <input type="submit" value="login" class="btn-btn">
 </form>
 
-<p>Don't have an account? <a href="{% url 'register-orphanage' %}">Register Here</a></p>
-<p><a href="{% url 'landingPage' %}">Home Page</a></p>
+<p>Don't have an account? <a href="{% url 'register-orphanage' %}" style="color: rgb(66, 66, 66);">Register Here</a></p>
 {% endblock content %}

@@ -1,0 +1,223 @@
+<!-- <h1>Landing Page</h1>
+<a href="{% url 'OrphanList' %}">OrphanList</a> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Me | Donate</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: url('/static/assets/images/meetings-bg.jpg');
+            z-index: -1;
+            z-index: -1;
+        }
+
+        .line {
+            background-color: rgb(88, 84, 84);
+            color: white;
+            padding: 0.6rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 4%;
+            width: 100%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            z-index: 999;
+            color: white;
+            font-weight: 600;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            margin-right: 2rem;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin: 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .logo {
+            color: black;
+            font-weight: bolder;
+            text-decoration: none;
+            font-size: 2.5rem;
+            margin-left: 4rem;
+
+        }
+
+        .logome {
+            color: rgb(10, 226, 255);
+            font-weight: bolder;
+            text-decoration: none;
+            font-size: 2.5rem;
+        }
+
+        .container .crowd-img img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            border-radius: 10px;
+            width: 100%;
+            height: 700px;
+            z-index: 5;
+        }
+
+        .paybtn {
+            z-index: 99;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upi h2,
+        .bitcoin h2 {
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        .upi,
+        .bitcoin {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        button {
+            margin-bottom: 20px;
+        }
+
+        .upi {
+            background-image: url('/static/assets/images/upi.jpg');
+        }
+
+        .bitcoin {
+            background-image: url('/static/assets/images/bitcoin.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /*Button CSS */
+        .button-17 {
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
+            color: green;
+            cursor: pointer;
+            display: inline-block;
+            font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-17:hover {
+            box-shadow: rgba(44, 187, 99, .35) 0 -25px 18px -14px inset, rgba(44, 187, 99, .25) 0 1px 2px, rgba(44, 187, 99, .25) 0 2px 4px, rgba(44, 187, 99, .25) 0 4px 8px, rgba(44, 187, 99, .25) 0 8px 16px, rgba(44, 187, 99, .25) 0 16px 32px;
+            transform: scale(1.2) rotate(-2deg);
+        }
+
+        .footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            background-color: rgb(88, 84, 84);
+            text-align: center;
+            color: white;
+            z-index: 999;
+            letter-spacing: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div>
+            <div class="line">This is a Non-Profit Social Welfare website designed to facilitate the adoption process
+                designed by Fantastic four team for Hackstreet 2.0 </div>
+
+            <nav class="navbar">
+
+                <a href="{% url 'landingPage' %}" class="logo">
+                    PARENT<span class="logome">ME</span>
+                </a>
+
+                <ul>
+                    <li><a href="{% url 'OrphanList' %}" style="text-decoration: none; color:white;">Orphanage</a></li>
+                    <li>AboutUs</li>
+                    <li>Donate</li>
+                    <li>Privacy & Terms</li>
+                    <li>Roadmap</li>
+                    <li>Contact Us</li>
+                </ul>
+            </nav>
+    </header>
+    <div class="container">
+        <div class="crowd-img">
+            <img src="/static/assets/images/crowdf.jpg" alt="">
+        </div>
+    </div>
+    <div class="paybtn">
+        <div class="upi">
+            <h2>Pay By UPI</h2>
+            <a href="http://localhost/phonepe/" target="_blank" class="button-17">Pay Now</a>
+            <!-- <button target="_blank" class="button-17" role="button" onclick="window.location.href='http://localhost/phonepe/'">Pay Now </button> -->
+        </div>
+        <div class="bitcoin">
+            <h2>Pay By BitCoin</h2>
+            <a href="http://localhost:5173/" target="_blank" class="button-17">Pay Now</a>
+        </div>
+    </div>
+    <footer class="footer">
+
+        <p>A Home for Every Heart: Explore Adoption Options Now</p>
+
+    </footer>
+
+
+</body>
+
+</html>

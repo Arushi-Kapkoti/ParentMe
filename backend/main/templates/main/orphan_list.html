@@ -1,16 +1,17 @@
 {% extends 'main/base.html' %}
 {% block content %}
-{% if request.user.is_authenticated %}
+
+<div class="top">
+    {% if request.user.is_authenticated %}
     <h1>Welcome {{request.user}}</h1>
-    <a href="{% url 'logout-orphanage' %}">Logout</a>
-{% else %}
-    <a href="{% url 'login-orphanage' %}">Login</a>
-{% endif %}
-<br>
-
-<a href="{% url 'AddOrphan' %}">Register a child with us</a>
+    <a href="{% url 'logout-orphanage' %}" class="btn" style="margin: 1rem 0 1rem 0;">Logout</a>
+    {% else %}
+        <a href="{% url 'login-orphanage' %}">Login</a>
+    {% endif %}
+    <br>
+    <a href="{% url 'AddOrphan' %}" class="btn" style="margin: 1rem 0 1rem 0;">Register a child with us</a>
+</div>
 <hr>
-
 <div class="outergrid">
     {% for orphan in Orphans %}
     <div class="gridcell">

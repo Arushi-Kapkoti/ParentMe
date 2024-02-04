@@ -99,6 +99,60 @@
            z-index:999;
            letter-spacing: 0.2rem;
         }
+        .btn {
+            text-decoration: none;
+            background-color: rgb(171, 219, 225);
+            color: white;
+            padding: 1rem;
+            width: 50;
+            height: 50;
+            border: 0.1rem solid rgb(171, 219, 225);;
+            border-radius: 10%;
+            margin-left: 0rem;
+            margin-right: 5rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        
+        .btn-btn{
+            background-color: rgb(171, 219, 225);
+            color: white;
+            padding: 1rem;
+            width: 50;
+            height: 50;
+            border: 0.1rem solid rgb(171, 219, 225);;
+            border-radius: 10%;
+            margin-left: 0rem;
+            margin-right: 5rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+        .srch-btn{
+            background-color: rgb(171, 219, 225);
+            color: white;
+            /* padding: 1rem; */
+            width: 50;
+            height: 50px;
+            border: 0.1rem solid rgb(171, 219, 225);;
+            border-radius: 10%;
+            /* margin-left: 0rem;
+            margin-right: 5rem;
+            margin-top: 1rem; */
+            font-size: 1.5rem;
+        }
+        .btn:hover,.btn-btn:hover,.srch-btn:hover{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:hover {
+            cursor: pointer;
+        }
+
+        .top{
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -113,7 +167,7 @@
         <ul>
             <li><a href="{% url 'OrphanList' %}" style="text-decoration: none; color:white;">Orphanage</a></li>
             <li>AboutUs</li>
-            <li>Donate</li>
+            <li><a href="{% url 'Donate' %}" style="text-decoration: none; color:white;">Donate</a></li>
             <li>Privacy & Terms</li>
             <li>Roadmap</li>
             <li>Contact Us</li>
